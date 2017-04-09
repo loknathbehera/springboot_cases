@@ -1,12 +1,16 @@
 package hello;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.apache.log4j.Logger;
+import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication
 public class Application {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+	public static Logger logger = Logger.getLogger(Application.class);
+
+	public static void main(String[] args) {
+		RestTemplate restTemplate = new RestTemplate();
+		Greeting greeting = restTemplate.getForObject("", Greeting.class);
+
+		logger.info(greeting);
+	}
 }

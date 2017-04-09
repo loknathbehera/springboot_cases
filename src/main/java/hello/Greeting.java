@@ -1,20 +1,31 @@
 package hello;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Greeting {
+	private Long id;
+	private String contents;
 
-	private final long id;
-	private final String content;
-
-	public Greeting(long id, String content) {
-		this.id = id;
-		this.content = content;
-	}
-
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public String getContent() {
-		return content;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+	public String getContents() {
+		return contents;
+	}
+
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+
+	@Override
+	public String toString() {
+		return "Greeting [id=" + id + ", contents=" + contents + "]";
+	}
+
 }
