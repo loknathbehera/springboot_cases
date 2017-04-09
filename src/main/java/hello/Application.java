@@ -9,7 +9,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		RestTemplate restTemplate = new RestTemplate();
-		Greeting greeting = restTemplate.getForObject("", Greeting.class);
+		Greeting greeting = restTemplate.getForObject("http://logan-hp-notebook:8080/greeting?name=CHiku", Greeting.class);
 
 		logger.info(greeting);
 	}
