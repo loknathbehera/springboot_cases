@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Greeting {
 	private Long id;
-	private String contents;
+	private String content;
 
 	public Long getId() {
 		return id;
@@ -15,17 +15,17 @@ public class Greeting {
 		this.id = id;
 	}
 
-	public String getContents() {
-		return contents;
+	public String getContent() {
+		return content;
 	}
 
-	public void setContents(String contents) {
-		this.contents = contents;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	@Override
 	public String toString() {
-		return "Greeting [id=" + id + ", contents=" + contents + "]";
+		return "Greeting [id=" + id + ", contents=" + content + "]";
 	}
 
 }
