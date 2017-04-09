@@ -1,0 +1,60 @@
+weak wifi signal ubuntu
+-----------------------------------------
+sudo modprobe -rv rtl8723be
+sudo modprobe -v rtl8723be ant_sel=1
+sudo tee /etc/modprobe.d/50-rtl8723be.conf
+
+
+Setup develpment enviroment
+------------------------------------------------
+
+1.Remove Libr*
+
+sudo apt-get remove --purge libreoffice*
+sudo apt-get clean
+sudo apt-get autoremove
+
+
+2.Install Java8
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+Install Maven
+-----------------------
+
+sudo apt-get install maven
+
+Install Git
+------------------------------
+
+sudo apt install git
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+Install Jenkins
+-----------------------------------
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+
+
+
+Install MySql
+---------------------------------------
+
+sudo apt-get install mysql-server-5.7
+
+
+
+
+
+install Gerrit
+---------------------------
+
+
+# create Gerrit review site with questionaire
+java -jar gerrit*.war init -d review_site
